@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10-Calculator</title>
+    <style> 
+    .numbers{
+       margin: 3px;
+        background-color: dimgrey;
+        font-size: 50px;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .resultscreen{
+        background-color: black;
+        font-size: 30px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        width: 230px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 >Calculator</h1>
+    <p class="resultscreen"></p>
+    <button onclick="appendToDisplay('1')" class="numbers">1</button>
+    <button onclick="appendToDisplay('2')" class="numbers">2</button>
+    <button onclick="appendToDisplay('3')"class="numbers">3</button>  
+    <button onclick="appendToDisplay('+')"class="numbers">+</button><br>
+    <button onclick="appendToDisplay('4')"class="numbers">4</button>
+    <button onclick="appendToDisplay('5')"class="numbers">5</button>
+    <button onclick="appendToDisplay('6')"class="numbers">6</button>
+    <button onclick="appendToDisplay('-')"class="numbers">-</button><br>
+    <button onclick="appendToDisplay('7')"class="numbers">7</button>
+    <button onclick="appendToDisplay('8')"class="numbers">8</button>
+    <button onclick="appendToDisplay('9')"class="numbers">9</button>
+    <button onclick="appendToDisplay('*')"class="numbers">*</button><br>
+    <button onclick="appendToDisplay('0')"class="numbers">0</button>
+    <button onclick="appendToDisplay('.')"class="numbers">.</button>
+    <button onclick="calculate('=')"class="numbers">=</button>
+    <button onclick="appendToDisplay('/')"class="numbers">/</button><br>
+    <button onclick="clearDisplay()"class="numbers">Clear</button>
+
+
+
+    <script> 
+    const display = document.querySelector('.resultscreen');
+    function appendToDisplay(input) {
+         display.textContent += input;
+    }
+   function clearDisplay() {
+         display.textContent = '';
+    }
+    function calculate() {
+        try {
+            display.textContent = eval(display.textContent);
+        } catch (error) {
+            display.textContent = 'Error';
+        }
+    }
+    </script>
+      
+
+
+  </body>
+  
+
+
+
+</html>
