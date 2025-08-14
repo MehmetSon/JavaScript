@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A</title>
+  </head>
+  <body>
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+    <button onclick="resetScore()">Reset Score</button>
+    <script>
+
+        let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0
+        };
+
+        function resetScore() {
+            score.wins = 0;
+            score.losses = 0;
+            localStorage.removeItem('score');
+            alert('Score has been reset.');
+        }
+        function playGame(playerMove){
+            const computerChoice = pickcomputerChoice();
+            let result = '';
+            if(playerMove === computerChoice) {
+                score.wins++;
+                result = 'You win!';
+            } else {
+                score.losses++;
+                result = 'You lose!';
+            }
+            localStorage.setItem('score', JSON.stringify(score));
+            alert(`You picked ${playerMove}. Computer picked ${computerChoice}. ${result} 
+wins: ${score.wins}, losses: ${score.losses}`);
+        }
+
+        function pickcomputerChoice(){
+            return Math.random() <= 0.5 ? 'heads' : 'tails';
+        }
+    </script>
+  </body>
+</html>

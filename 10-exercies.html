@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10-Exercies</title>
+    <style> 
+    .buton-color {
+        font-size: 20px;
+     background-color: black;
+        color: white;
+
+    }
+    .is-toggled {
+      background-color: gray;
+        color: black;
+    }
+
+    </style>
+  </head>
+  <body>
+    <button class="js-class1 buton-color" 
+    onclick="onOfToggle('.js-class1')"
+   
+    
+    >Gaming</button>
+    <button class="js-class2 buton-color" onclick="
+    onOfToggle('.js-class2')
+    
+    " >Music</button>
+    <button class="js-class3 buton-color"  onclick="
+    onOfToggle('.js-class3')
+    
+    ">Tech</button>
+   
+
+    <script> 
+
+        function onOfToggle(select) {
+           
+           const button = document.querySelector(select);
+            if(!button.classList.contains('is-toggled')) {
+            button.classList.add('is-toggled');
+            
+            } else {
+            button.classList.remove('is-toggled');
+            }
+        }
+
+    </script>
+      
+
+
+  </body>
+  
+
+
+
+</html>

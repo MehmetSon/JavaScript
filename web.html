@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<p id="demo"></p>
+
+<button onclick="rand()"></button>
+<p id="new"></p>
+<p id="l"></p>
+<script>
+var a = Math.floor(Math.random() * 100);
+document.getElementById("demo").innerHTML = a;
+function rand(){
+    var x = Math.floor(Math.random() * 100);
+    document.getElementById("new").innerHTML = x;
+   if (x > a) {
+    document.getElementById("l").innerHTML = "x is greater than a";
+    } else {
+   document.getElementById("l").innerHTML = "a is greater than x";
+    }
+}
+  
+
+</script>
+
+
+
+</body>
+</html>
