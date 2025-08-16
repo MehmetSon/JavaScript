@@ -1,0 +1,135 @@
+/* 12-todo-list.css */
+
+/* Genel sayfa stili */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0;
+    color: #333;
+}
+
+/* Başlık */
+p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Todo input alanı grid */
+.todo-input-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Inputlar */
+.todo-input-grid input[type="text"],
+.todo-input-grid input[type="date"] {
+    padding: 10px 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.todo-input-grid input[type="text"]:focus,
+.todo-input-grid input[type="date"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Buton */
+.todo-input-grid button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.todo-input-grid button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Todo liste grid */
+.todo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Her bir todo öğesi */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Todo metni ve tarih */
+.todo-text {
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.todo-date {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-left: 10px;
+}
+
+/* Silme butonu */
+.todo-delete-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+}
+
+.todo-delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .todo-input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .todo-input-grid button {
+        width: 100%;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
