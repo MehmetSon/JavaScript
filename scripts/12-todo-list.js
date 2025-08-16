@@ -33,7 +33,12 @@ function addTodoList(){
     const todoInputValue = todoInputElement.value;
     const todoDateElement = document.querySelector('.js-todo-date-input');
     const todoDateValue = todoDateElement.value;
-   todoListArray.push({
+    if (!todoInputValue || !todoDateValue) {
+        alert('Please enter both a task and a due date.');
+        return;
+    }
+   else{
+    todoListArray.push({
         name: todoInputValue,
         date: todoDateValue
     });
@@ -41,5 +46,6 @@ function addTodoList(){
     todoInputElement.value = '';
     todoDateElement.value = '';
     displayTodoList() ;
+}
 }
   displayTodoList();
